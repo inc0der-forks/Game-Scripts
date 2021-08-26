@@ -306,9 +306,10 @@ class DynamicValue extends System.Base {
                     , any>;
                 for (let i = 0, l = jsonList.length; i < l; i++) {
                     jsonParameter = jsonList[i];
+                    const name = Utils.camelize(jsonParameter.name)
                     parameter = System.DynamicValue.readOrDefaultNumber(
                         jsonParameter.value);
-                    this.customStructure[jsonParameter.name] = parameter;
+                    this.customStructure[name] = parameter;
                 }
                 break;
             case DynamicValueKind.CustomList:
