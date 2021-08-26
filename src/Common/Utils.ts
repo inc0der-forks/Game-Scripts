@@ -112,13 +112,19 @@ class Utils {
         }
     }
 
+    static camelize(text: string): string {
+      return text.replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {
+          return index === 0 ? word.toLowerCase() : word.toUpperCase();
+        }).replace(/\s+/g, '');
+      }
+
     /** Return a string of the date by passing all the seconds
      *   @static
      *   @param {number} total - Total number of seconds
      *   @returns {string}
      */
     static getStringDate(total: number): string {
-        return (this.formatNumber(Math.floor(total / 3600), 4) + Constants
+        return (this.formatNumbeer(Math.floor(total / 3600), 4) + Constants
             .STRING_COLON + this.formatNumber(Math.floor((total % 3600) / 60), 2
             ) + Constants.STRING_COLON + this.formatNumber(Math.floor(total % 60
             ), 2));
