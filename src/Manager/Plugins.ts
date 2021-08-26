@@ -153,7 +153,8 @@ class Plugins {
      *  @returns {any}
      */
     static getParameter(pluginName: string, parameter: string): any {
-        return this.getParameters(pluginName)[parameter].getValue()
+      const key = Utils.camelize(parameter);
+      return this.getParameters(pluginName)[key].getValue();
     }
 
     /**
