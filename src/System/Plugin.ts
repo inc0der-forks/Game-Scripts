@@ -51,14 +51,16 @@ class Plugin extends Base {
         let i: number, l: number;
         for (i = 0, l = jsonList.length; i < l; i++) {
             jsonObj = jsonList[i];
+            const name = Utils.camelize(jsonObj.name)
             obj = System.DynamicValue.readOrDefaultNumber(jsonObj.defaultValue);
-            this.parameters[jsonObj.name] = obj;
+            this.parameters[name] = obj;
         }
         this.commands = {};
         this.commandsNames = [];
         jsonList = Utils.defaultValue(json.commands, []);
         for (i = 0, l = jsonList.length; i < l; i++) {
             jsonObj = jsonList[i];
+            const name = Utils.camelize(jsonObj.name)
             this.commands[jsonObj.name] = null;
             this.commandsNames[jsonObj.id] = jsonObj.name;
         }
