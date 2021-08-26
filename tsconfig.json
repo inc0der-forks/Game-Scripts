@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es2020",
     "module": "esNext",
+    "incremental": true,
     "moduleResolution": "node",
     "lib": [
       "ES6",
@@ -16,7 +17,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "./Content/Datas/Scripts/System"
+    "outDir": "./build/Datas/Scripts/System"
   },
   "include": [
     "./src/**/*.ts"
